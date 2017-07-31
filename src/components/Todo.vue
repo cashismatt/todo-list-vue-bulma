@@ -1,18 +1,31 @@
 <template>
   <section class="section">
-    <!-- show card content when not edting -->
-    <div class="content" v-show="!isEditing">
-      <p class="title is-5 is-spaced">
-        {{ todo.title }}
-      </p>
-      <p class='subtitle is-6'>
-        {{ todo.project }}
-      </p>
-      <!-- todo options -->
-      <div class="option-buttons">
-        <a class="button is-outlined is-small" v-on:click="showForm">Edit</a>
-        <a class="button is-outlined is-small" v-on:click="deleteTodo(todo)">Delete</a>
+    <div class="card" v-show="!isEditing">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{ todo.title }}
+        </p>
+        <a class="card-header-icon">
+          <span class="status">
+            <!-- todo status -->
+            <div class="button is-success is-small" v-show="todo.done">
+              Completed
+            </div>
+            <div class="button is-danger is-small" v-show="!todo.done">
+              Pending
+            </div>
+          </span>
+        </a>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          {{ todo.project }}
+        </div>
       </div>
+      <footer class="card-footer">
+        <a class="card-footer-item" v-on:click="showForm">Edit</a>
+        <a class="card-footer-item" v-on:click="deleteTodo(todo)">Delete</a>
+      </footer>
     </div>
     <!-- show card content when editing -->
     <div class="edit-form box" v-show="isEditing">
@@ -30,16 +43,9 @@
           </div>
         </div>
         <div class="close">
-          <a class="button is-small" v-on:click="hideForm">Close X</a>
+          <a class="button is-small" v-on:click="hideForm">Save</a>
         </div>
       </div>
-    </div>
-    <!-- todo options -->
-    <div class="button is-success is-small" v-show="todo.done">
-      Completed
-    </div>
-    <div class="button is-danger is-small" v-show="!todo.done">
-      Pending
     </div>
   </section>
 </template>
