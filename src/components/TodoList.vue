@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h1 class="content is-large">To-Do List</h1>
-    <section class="content is-small">
+    <h1 class="content header is-large">To-Do List</h1>
+    <section class="content stats is-small">
       <!-- todo stats -->
       <p>
         Completed: {{ todos.filter(todo => {return todo.done === true}).length }}
@@ -10,6 +10,7 @@
         Pending: {{ todos.filter(todo => {return todo.done === false}).length }}
       </p>
     </section>
+
     <!-- render todo component -->
     <todo v-for="todo in todos" v-bind:todo="todo"></todo>
   </section>

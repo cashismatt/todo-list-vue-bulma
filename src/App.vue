@@ -24,9 +24,9 @@ export default {
         project: 'Project 2',
         done: false
       }, {
-        title: 'Todo 2',
-        project: 'Project 2',
-        done: false
+        title: 'Todo 3',
+        project: 'Project 3',
+        done: true
       }]
     }
   }
