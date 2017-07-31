@@ -19,7 +19,7 @@
       </div>
     </section>
     <!-- render todo component -->
-    <todo v-o:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
+    <todo v-on:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 
