@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <todo-list v-bind:todos="todos"></todo-list>
+    <new-todo v-on:new-todo="newTodo"></new-todo>
     <footer>
       <div class="container">
         <p class="subtitle is-6 is-small">built with <strong><a target="_blank" href="https://vuejs.org/">vue.js</a></strong> by <strong><a target="_blank" href="https://github.com/josheche">josheche</a></strong></p>
@@ -11,11 +12,13 @@
 
 <script>
 import TodoList from './components/TodoList'
+import NewTodo from './components/NewTodo'
 
 export default {
   name: 'app',
   components: {
-    TodoList
+    TodoList,
+    NewTodo
   },
   // data available to the template
   data () {
@@ -33,6 +36,11 @@ export default {
         project: 'Project 3',
         done: true
       }]
+    }
+  },
+  methods: {
+    newTodo (newTodo) {
+      this.todos.push(newTodo)
     }
   }
 }
