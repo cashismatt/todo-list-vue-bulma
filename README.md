@@ -1,6 +1,6 @@
-# todo-app
+# To-Do List
 
-> todo app with webpac
+> Vue.js To-Do list single-page app using webpack and Bulma CSS framework.
 
 ## Build Setup
 

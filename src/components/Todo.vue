@@ -8,12 +8,12 @@
         <a class="card-header-icon">
           <span class="status">
             <!-- todo status -->
-            <div class="button is-success is-small" v-show="todo.done">
+            <a class="button is-success is-small" v-show="!isEditing && todo.done" disabled>
               Completed
-            </div>
-            <div class="button is-danger is-small" v-show="!todo.done">
+            </a>
+            <a class="button is-danger is-small" v-on:click="completeTodo(todo)" v-show="!iEditing && !todo.done">
               Pending
-            </div>
+            </a>
           </span>
         </a>
       </header>
@@ -67,6 +67,9 @@
       },
       deleteTodo (todo) {
         this.$emit('delete-todo', todo)
+      },
+      completeTodo (todo) {
+        this.$emit('complete-todo', todo)
       }
     }
   }
