@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>To-Do List</h1>
     <todo-list v-bind:todos="todos"></todo-list>
   </div>
 </template>
