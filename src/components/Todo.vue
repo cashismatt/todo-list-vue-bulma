@@ -35,11 +35,11 @@
       </div>
     </div>
     <!-- todo options -->
-    <div class="button is-static is-small" v-show="todo.done">
+    <div class="button is-success is-small" v-show="todo.done">
       Completed
     </div>
-    <div class="button is-static is-small" v-show="!todo.done">
-      Complete
+    <div class="button is-danger is-small" v-show="!todo.done">
+      Pending
     </div>
   </section>
 </template>
