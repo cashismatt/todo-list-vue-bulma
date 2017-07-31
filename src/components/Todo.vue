@@ -1,47 +1,45 @@
 <template>
-  <section class="card">
+  <section class="section">
     <!-- show card content when not edting -->
     <div class="content" v-show="!isEditing">
-      <div class="header">
+      <p class="title is-5 is-spaced">
         {{ todo.title }}
-      </div>
-      <div class='meta'>
+      </p>
+      <p class='subtitle is-6'>
         {{ todo.project }}
-      </div>
-      <!-- edit todo -->
-      <div class="edit">
-        <button class="button is-outlined" v-on:click="showForm">Edit</button>
+      </p>
+      <!-- todo options -->
+      <div class="option-buttons">
+        <a class="button is-outlined is-small" v-on:click="showForm">Edit</a>
+        <a class="button is-outlined is-small" v-on:click="deleteTodo(todo)">Delete</a>
       </div>
     </div>
-      <!-- show card content when editing -->
-
-      <div class="content edit" v-show="isEditing">
-        <div class="form">
-          <div class="field">
-            <label class="label">Title</label>
-            <div class="control">
-              <input class="input" type="text" v-model="todo.title" />
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Project</label>
-            <div class="control">
-              <input class="input" type="text" v-model="todo.project" />
-            </div>
-          </div>
-          <div class="close">
-            <button class="button" v-on:click="hideForm">Close X</button>
+    <!-- show card content when editing -->
+    <div class="edit-form box" v-show="isEditing">
+      <div class="form">
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input class="input" type="text" v-model="todo.title" />
           </div>
         </div>
+        <div class="field">
+          <label class="label">Project</label>
+          <div class="control">
+            <input class="input" type="text" v-model="todo.project" />
+          </div>
+        </div>
+        <div class="close">
+          <a class="button is-small" v-on:click="hideForm">Close X</a>
+        </div>
       </div>
-
-      <!-- todo options -->
-      <div class="button is-static" v-show="todo.done">
-        Completed
-      </div>
-      <div class="button is-static" v-show="!todo.done">
-        Complete
-      </div>
+    </div>
+    <!-- todo options -->
+    <div class="button is-static is-small" v-show="todo.done">
+      Completed
+    </div>
+    <div class="button is-static is-small" v-show="!todo.done">
+      Complete
     </div>
   </section>
 </template>
@@ -60,6 +58,9 @@
       },
       hideForm () {
         this.isEditing = false
+      },
+      deleteTodo (todo) {
+        this.$emit('delete-todo', todo)
       }
     }
   }
