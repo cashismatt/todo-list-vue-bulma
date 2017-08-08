@@ -7,11 +7,11 @@
         </p>
         <a class="card-header-icon">
           <span class="status">
-            <!-- todo status -->
+            <!-- todo status tags -->
             <a class="button is-success is-small" v-show="!isEditing && todo.done" disabled>
               Completed
             </a>
-            <a class="button is-danger is-small" v-on:click="completeTodo(todo)" v-show="!iEditing && !todo.done">
+            <a class="button is-danger is-small" v-on:click="completeTodo(todo)" v-show="!isEditing && !todo.done">
               Pending
             </a>
           </span>

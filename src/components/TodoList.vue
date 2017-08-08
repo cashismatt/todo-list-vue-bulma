@@ -5,7 +5,7 @@
         <div class="container">
           <h1 class="title is-large">To-Do List</h1>
           <div class="tabs is-fullwidth">
-            <!-- todo stats -->
+            <!-- all todo stats -->
             <ul>
               <li>
                 Completed: {{ todos.filter(todo => {return todo.done === true}).length }}
@@ -19,7 +19,7 @@
       </div>
     </section>
     <!-- render todo component -->
-    <todo v-on:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
+    <todo key="id" v-on:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 
