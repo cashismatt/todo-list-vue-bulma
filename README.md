@@ -35,4 +35,11 @@ Incomplete; passing.
 ### unit
 Incomplete; failing.
 
+## To-Do
+
+- Local storage of to-do items (cookies?)
+- Finish writing tests
+- Integrate some sort of CI (circleci?)
+- Make docker container
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
