@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="create-options">
-        <a class="button" v-on:click="sendForm()">Create</a>
-        <a class="button" v-on:click="closeForm">Cancel</a>
+        <a class="button" id="createButton" v-on:click="sendForm()">Create</a>
+        <a class="button" id="cancelButton" v-on:click="closeForm">Cancel</a>
       </div>
     </div>
   </div>

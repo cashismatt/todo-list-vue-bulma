@@ -11,9 +11,14 @@ module.exports = {
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      // .assert.elementPresent('todo-list')
-      // .assert.elementPresent('new-todo')
-      // .assert.elementCount('img', 1)
+      // should see todo stats in hero
+      .waitForElementVisible('#todoStats', 5000)
+      // should see all rendered todo components
+      .waitForElementVisible('#todoItem', 5000)
+      // should see New Todo Button
+      .waitForElementVisible('a.button.is-outlined.is-small', 5000)
+      // click button to open new todo form
+      // .waitForElementVisible('', 5000)
       // always call .end() method at end of test to kill the selenium server
       .end()
   }

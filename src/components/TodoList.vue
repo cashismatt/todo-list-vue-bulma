@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title is-large">To-Do List</h1>
-          <div class="tabs is-fullwidth">
+          <div id="todoStats" class="tabs is-fullwidth">
             <!-- all todo stats -->
             <ul>
               <li>
@@ -19,7 +19,7 @@
       </div>
     </section>
     <!-- render todo component -->
-    <todo key="id" v-on:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
+    <todo id="todoItem" key="id" v-on:complete-todo="completeTodo" v-on:delete-todo="deleteTodo" v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 
