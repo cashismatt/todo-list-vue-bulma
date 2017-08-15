@@ -30,9 +30,9 @@ npm test
 ## Test Coverage
 
 ### e2e
-Incomplete
+Incomplete; passing.
 
 ### unit
-Incomplete
+Incomplete; failing.
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
